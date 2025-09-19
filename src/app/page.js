@@ -1,103 +1,131 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
+import "@/styles/Home.css";
+
+// components
+import Dashboard from "@/components/Dashboard";
+import SolarProduct from "@/components/SolarProduct";
+import SolarCostCalculator from "@/components/SolarCostCalculator";
+import FaqSection from "@/components/FaqSection";
+import SolarPortfolio from "@/components/SolarPortfolio";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
+import ChatbotToggle from "@/components/ChatbotToggle";
+import SolarSolutions from "@/components/SolarSolutions";
+import ChatUI1 from "@/components/ChatUI1";
+import PageOne from "@/components/PageOne";
+import Conversation from "@/components/Conversation";
+import HomeStart2 from "@/components/HomeStart2";
+import HoverVideoCard1 from "@/components/HoverVideoCard1";
+import FiguringOut1 from "@/components/FiguringOut1";
+import ExactMatchPage1 from "@/components/ExactMatchPage1";
+import FullScreenVideo from "@/components/FullScreenVideo";
+import RatingWorks from "@/components/RatingWorks";
+import Navbar2 from "@/components/Navbar2";
+
 export default function Home() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="relative max-w-full mx-auto overflow-x-hidden">
+      {/* ChatbotToggle */}
+      <ChatbotToggle />
+
+      {/* Hero Section */}
+      <section className="About relative w-full">
+        <FullScreenVideo />
+        <div className="relative z-10">
+          <HomeStart2 />
+        </div>
+      </section>
+      {/* Conversation Section */}
+      <section className="px-4 sm:px-6 lg:px-12 mt-24 relative z-10">
+        <Conversation />
+      </section>
+
+      {/* Solar Cost Calculator Section */}
+      <section className="mt-12 px-4 sm:px-6 lg:px-12 relative z-10">
+        <SolarCostCalculator />
+        <div className="flex justify-center mt-8">
+          <Link href="/contact">
+            <button className="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white font-bold py-4 px-8 sm:px-10 rounded-full text-base sm:text-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+              Adhik jaankari ke liye click krein
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Solar Solutions Section */}
+      {/* Solar Solutions */}
+      <section className="About px-4 sm:px-6 lg:px-12 mt-24 relative z-10">
+        <SolarSolutions />
+      </section>
+
+      {/* Contact Form */}
+      <section className="About1 px-4 sm:px-6 lg:px-12 mt-32 md:mt-40 relative z-10">
+        <div className="pt-10">
+          <ContactForm />
+        </div>
+      </section>
+
+      {/* PageOne & ChatUI */}
+      <section className="About mt-24 relative z-10">
+        <PageOne />
+      </section>
+      <section className="About px-4 sm:px-6 lg:px-12 mt-12 relative z-10">
+        <ChatUI1 />
+      </section>
+
+      {/* Products Section */}
+      <section className="bg-gray-900 py-20 px-4 sm:px-6 lg:px-16 mt-24 relative z-10">
+        <SolarProduct />
+      </section>
+
+      {/* Floating Image */}
+      {/* Floating Image Full Width */}
+      <section className="mt-20 relative w-full h-[400px] z-10">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/DivyRedesign.webp"
+          alt="Design"
+          fill
+          className="rounded-lg shadow-lg object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Other Sections */}
+      <section className="mt-24 sm:mt-32 md:mt-40 px-4 sm:px-6 lg:px-12 relative z-10">
+        <FiguringOut1 />
+      </section>
+      <section className="mt-16 px-4 sm:px-6 lg:px-12 relative z-10">
+        <ExactMatchPage1 />
+      </section>
+
+      {/* HoverVideo + FAQ */}
+      <section className="mt-1 px-4 sm:px-6 lg:px-12 py-20 relative z-10">
+        {/* Hover Video Card with full width */}
+        <div className="w-full">
+          <HoverVideoCard1 className="w-full" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* FAQ Section with spacing */}
+        <div className="mt-16 sm:mt-20">
+          <FaqSection />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <section className="About mt-24 relative z-10">
+        <Footer />
+      </section>
     </div>
   );
 }

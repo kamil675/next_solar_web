@@ -1,0 +1,111 @@
+.About {
+  font-family: "Inter";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.About1 {
+  font-family: "Inter";
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.GetfontHome {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.GetfontHomeDash {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.GetfontHomeChat {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.GetFontSol {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.GetfontHomeChat1 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ✅ Fixed image path */
+.bgimg {
+  position: relative;
+  background: url("/b.png");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+/* ✅ Fixed image paths */
+.wp {
+  background-image: url("/Wp.jpg");
+}
+
+.wp {
+  background-image: url("/Wp.webp");
+}
+
+.sc {
+  transform: scale(1.5);
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.scroll-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+video:fullscreen {
+  object-fit: contain;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ✅ Media queries for small screens */
+@media (min-width: 401px) and (max-width: 530px) {
+  .move-down-200 {
+    margin-top: 200px;
+  }
+}
+
+@media (min-width: 351px) and (max-width: 401px) {
+  .move-down-300 {
+    margin-top: 300px;
+  }
+}
+
+@media (min-width: 301px) and (max-width: 350px) {
+  .move-down-350 {
+    margin-top: 400px;
+  }
+}
+
+@media (min-width: 251px) and (max-width: 301px) {
+  .move-down-500 {
+    margin-top: 500px;
+  }
+}
+
+@media (min-width: 201px) and (max-width: 251px) {
+  .move-down-600 {
+    margin-top: 600px;
+  }
+}
